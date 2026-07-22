@@ -80,7 +80,7 @@ Do not include markdown, explanations, or additional text.
         problem_title: str | None = None,
     ) -> list[dict[str, str]]:
         """
-        Build chat messages ready for the Hugging Face chat-completions API.
+        Build chat messages for the Hugging Face Chat Completions API.
         """
 
         return [
