@@ -1,8 +1,12 @@
+import logging
+
 from app.schemas.request import AnalysisRequest
 from app.schemas.response import AnalysisResponse
 from app.services.huggingface import HuggingFaceClient
 from app.services.prompt_builder import PromptBuilder
 from app.utils.parser import ResponseParser
+
+logger = logging.getLogger(__name__)
 
 
 class AnalyzerService:
@@ -29,21 +33,35 @@ class AnalyzerService:
         Analyze the submitted source code using the LLM.
         """
 
-        messages = PromptBuilder.build_messages(
-            code=request.code,
-            language=request.language,
-            problem_title=request.problem_title,
-        )
+        try:
+            logger.info("Building prompt messages.")
 
-        response = self.client.chat(messages)
+            messages = PromptBuilder.build_messages(
+                code=request.code,
+                language=request.language,
+                problem_title=request.problem_title,
+            )
 
-        content = response["choices"][0]["message"]["content"]
+            logger.info("Sending request to Hugging Face model.")
 
-        print("\n" + "=" * 100)
-        print("LLM RESPONSE:")
-        print(content)
-        print("=" * 100 + "\n")
+            response = self.client.chat(messages)
 
-        parsed_response = ResponseParser.parse_response(content)
+            logger.info("Received response from Hugging Face.")
 
-        return AnalysisResponse.model_validate(parsed_response)
+            content = response["choices"][0]["message"]["content"]
+
+            logger.info("Parsing model response.")
+
+            parsed_response = ResponseParser.parse_response(content)
+
+            logger.info("Validating response schema.")
+
+            validated_response = AnalysisResponse.model_validate(parsed_response)
+
+            logger.info("Code analysis completed successfully.")
+
+            return validated_response
+
+        except Exception:
+            logger.exception("AnalyzerService failed during code analysis.")
+            raise
