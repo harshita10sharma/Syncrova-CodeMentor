@@ -24,8 +24,15 @@ def analyze_code(request: AnalysisRequest):
     try:
         return analyzer.analyze(request)
 
-    except Exception as e:
+    except ValueError as e:
+        raise HTTPException(
+            status_code=400,
+            detail=str(e),
+     )
+
+    except Exception:
         raise HTTPException(
             status_code=500,
-            detail=str(e),
+            detail="Internal server error while analyzing the code.",
         )
+    
