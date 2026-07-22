@@ -8,6 +8,10 @@ from app.config import (
 
 
 class HuggingFaceClient:
+    """
+    Client for interacting with the Hugging Face Chat Completions API.
+    """
+
     def __init__(self):
         self.url = API_URL
 
@@ -16,25 +20,28 @@ class HuggingFaceClient:
             "Content-Type": "application/json",
         }
 
-    def chat(self, prompt: str):
+    def chat(
+        self,
+        messages: list[dict[str, str]],
+        temperature: float = 0.2,
+        max_tokens: int = 512,
+    ) -> dict:
+        """
+        Send chat messages to the configured language model.
+        """
 
         payload = {
             "model": MODEL_NAME,
-            "messages": [
-                {
-                    "role": "user",
-                    "content": prompt
-                }
-            ],
-            "temperature": 0.2,
-            "max_tokens": 512
+            "messages": messages,
+            "temperature": temperature,
+            "max_tokens": max_tokens,
         }
 
         response = requests.post(
             self.url,
             headers=self.headers,
             json=payload,
-            timeout=120
+            timeout=120,
         )
 
         response.raise_for_status()
