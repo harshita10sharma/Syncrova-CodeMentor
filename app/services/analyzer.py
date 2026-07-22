@@ -39,6 +39,11 @@ class AnalyzerService:
 
         content = response["choices"][0]["message"]["content"]
 
-        parsed_response = ResponseParser.extract_json(content)
+        print("\n" + "=" * 100)
+        print("LLM RESPONSE:")
+        print(content)
+        print("=" * 100 + "\n")
+
+        parsed_response = ResponseParser.parse_response(content)
 
         return AnalysisResponse.model_validate(parsed_response)
