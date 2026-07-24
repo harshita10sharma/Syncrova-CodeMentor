@@ -1,10 +1,10 @@
-# Syncrova CodeMentor
+# 🤖 Syncrova CodeMentor
 
 An intelligent AI-powered coding mentor that analyzes programming solutions, identifies mistakes, suggests optimizations, estimates algorithm complexity, and provides personalized learning feedback through Large Language Models.
 
 ---
 
-## Live API
+## 🚀Live API
 
 **Base URL**
 
@@ -16,7 +16,7 @@ https://syncrova-codementor.onrender.com/docs
 
 ---
 
-# Project Overview
+# 📖  Project Overview
 
 Syncrova CodeMentor is designed to help developers improve their coding skills rather than simply generate code.
 
@@ -26,7 +26,7 @@ The backend is built with FastAPI and deployed on Render, returning standardized
 
 ---
 
-# Objective
+# 🎯 Objective
 
 To build an AI-powered coding mentor that assists programmers by:
 
@@ -39,7 +39,7 @@ To build an AI-powered coding mentor that assists programmers by:
 
 ---
 
-# AI Engine
+#🧠 AI Engine
 
 Unlike traditional chatbots that simply answer questions, Syncrova analyzes source code through a structured AI pipeline.
 
@@ -67,36 +67,36 @@ Unlike traditional chatbots that simply answer questions, Syncrova analyzes sour
 
 ---
 
-# Features
+# ✨Features
 
-### Intelligent Code Analysis
+### 🛠 Intelligent Code Analysis
 
 - Syntax Error Detection
 - Logical Error Detection
 - Runtime Risk Identification
 - Edge Case Suggestions
 
-### AI-Based Optimization
+### ⚡ AI-Based Optimization
 
 - Algorithm Improvements
 - Better Data Structure Recommendations
 - Code Refactoring Suggestions
 - Complexity Reduction
 
-### Complexity Analysis
+### 📈 Complexity Analysis
 
 - Time Complexity Estimation
 - Space Complexity Estimation
 - Complexity Explanation
 
-### Personalized Learning
+###  📚Personalized Learning
 
 - Weak Topic Identification
 - Concept Recommendations
 - Practice Guidance
 - Educational Feedback
 
-### Performance Evaluation
+###  🔧Performance Evaluation
 
 - Correctness Score
 - Readability Score
@@ -105,7 +105,7 @@ Unlike traditional chatbots that simply answer questions, Syncrova analyzes sour
 - Overall Performance Score
 - Confidence Score
 
-### Production Ready Backend
+### 🏗 Production Ready Backend
 
 - FastAPI REST API
 - Structured JSON Responses
@@ -115,7 +115,7 @@ Unlike traditional chatbots that simply answer questions, Syncrova analyzes sour
 
 ---
 
-# Technology Stack
+#  💻  Technology Stack
 
 ## Backend
 
@@ -173,7 +173,7 @@ Unlike traditional chatbots that simply answer questions, Syncrova analyzes sour
 
 ---
 
-# API Endpoints
+#  📡 API Endpoints
 
 | Method | Endpoint | Description |
 |---------|----------|-------------|
@@ -216,7 +216,7 @@ Unlike traditional chatbots that simply answer questions, Syncrova analyzes sour
 
 ---
 
-# Project Structure
+#  📁 Project Structure
 
 ```text
 app/
@@ -237,7 +237,7 @@ README.md
 
 ---
 
-# Installation
+# ⚙️Installation
 
 Clone the repository
 
@@ -281,7 +281,7 @@ uvicorn app.main:app --reload
 
 ---
 
-# Environment Variables
+#  🌐 Environment Variables
 
 Create a `.env` file.
 
@@ -295,7 +295,7 @@ API_URL=https://router.huggingface.co/v1/chat/completions
 
 ---
 
-# Docker
+#  🐳 Docker
 
 Build
 
@@ -311,7 +311,7 @@ docker run -p 8000:8000 syncrova-codementor
 
 ---
 
-# Deployment
+#  📸 Deployment
 
 The backend is deployed on **Render**.
 
@@ -337,7 +337,7 @@ Add the following screenshots after frontend integration:
 
 ---
 
-# Roadmap
+#  🗺Roadmap
 
 - [x] FastAPI Backend
 - [x] AI Integration
@@ -363,12 +363,12 @@ Add the following screenshots after frontend integration:
 
 ---
 
-# License
+#  📄 License
 
 This project is licensed under the MIT License.
 
 ---
 
-## Vision
+## 💡 Vision
 
 **Syncrova CodeMentor aims to bridge the gap between solving coding problems and understanding them. By combining Large Language Models with structured analysis and educational feedback, it transforms every code submission into a meaningful learning experience rather than just producing an answer.**
